@@ -38,8 +38,8 @@ class user_lock_dekker : public user_lock {
 private:
     // TODO: Change the types as necessary
     // NOTE: The lock supports only two threads
-    bool m_flag[2];
-    bool m_turn;
+    std::atomic_bool m_flag[2];
+    std::atomic_int8_t m_turn;
 
 public:
     user_lock_dekker();
