@@ -33,5 +33,9 @@ void atomic_counter_lock::set(int value) {
 
 int atomic_counter_lock::get() {
     // TODO: Add locks here
-    return m_value;
+    int current;
+    this->m_lock.lock();
+    current = m_value;
+    this->m_lock.unlock();
+    return current;
 }
