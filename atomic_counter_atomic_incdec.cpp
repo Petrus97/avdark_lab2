@@ -24,5 +24,5 @@ void atomic_counter_atomic_incdec::set(int value) {
 
 int atomic_counter_atomic_incdec::get() {
     // TODO: Modify this code using atomic load operations
-    return  m_value.load(std::memory_order_relaxed);
+    return  m_value.load();
 }
